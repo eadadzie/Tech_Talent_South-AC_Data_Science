@@ -1,0 +1,138 @@
+#### SQL 1
+
+# Online SQL Environment
+https://sqliteonline.com/
+
+# Database on Github
+https://github.com/techtalentsouth/Example-Databases
+
+# Database Schema
+https://github.com/techtalentsouth/Example-Databases/blob/master/my_ipod_schema.md
+
+
+##### HW Answers
+
+Q1. 5 Aspects od databases and SQL important to software and application
+
+* TABLES holding different aspects of the data
+* Data in each table stratified into ATTRIBUTES or COLUMNS
+* Each data made unique using PRIMARY KEYs to maintain integrity
+* Tables of related data joined by RELATIONSHIPS using the primary and the FOREIGN KEYs
+* Different levels of NORMALIZATION applied to ensure data redundancy and integrity
+* Data insert, updated, or deleted using a set of instructional language in the for of 
+  queries. For example, SQL-Structured Query Language
+
+
+Q2. 5 Questions on databases and SQL
+
+* How many types of data models or databases are available and when are they used?
+* When do we implement the different levels of normalization and to what extent?
+* How are databases managed?
+* What are the security and privacy issues associated with databases?
+* How are do the various cloud services manage our data since some data are databases
+  themselves?
+ 
+
+###### Using SQLiteOnline
+
+# Creating Tables
+
+CREATE TABLE User
+(
+	UserID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 
+	FirstName VARCHAR NOT NULL,
+	LastName VARCHAR NOT NULL,
+	Birthplace VARCHAR NOT NULL,
+	CreatedAt DATETIME NOT NULL,
+	UpdatedAt DATETIME NULL
+);
+
+
+CREATE TABLE Favorite 
+(
+	FavoriteID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 
+	UserID INTEGER NOT NULL,
+	ArtistID INTEGER, 
+	AlbumID INTEGER,
+	SongID INTEGER,
+	GenreID INTEGER,
+	CreatedAt DATETIME NOT NULL,
+	UpdatedAt DATETIME NULL,
+	FOREIGN KEY (UserID) REFERENCES User (UserID),
+	FOREIGN KEY (ArtistID) REFERENCES artists (id),
+	FOREIGN KEY (AlbumID) REFERENCES albums (id),
+	FOREIGN KEY (SongID) REFERENCES songs (id),
+	FOREIGN KEY (GenreID) REFERENCES genres (id)
+);
+
+
+# Inserting values
+
+INSERT INTO User 
+(
+  FirstName, 
+  LastName,
+  Birthplace,
+  CreatedAt
+)  
+VALUES 
+(	
+  'Wesley', 
+  'Chambers', 
+  'Orlando, Florida',
+  CURRENT_DATE
+);
+
+INSERT INTO User 
+(
+  FirstName, 
+  LastName,
+  Birthplace,
+  CreatedAt
+)  
+VALUES 
+(	
+  'Michael', 
+  'Jordan', 
+  'Brooklyn, New York',
+  CURRENT_TIMESTAMP
+);
+
+OR
+
+INSERT INTO User 
+(
+  FirstName, 
+  LastName,
+  Birthplace,
+  CreatedAt
+)  
+VALUES 
+('Wesley', 'Chambers', 'Orlando, Florida', CURRENT_DATE),  
+('Michael', 'Jordan', 'Brooklyn, New York', CURRENT_TIMESTAMP); 
+
+
+George.p.tryfiates@gmail.com
+
+hbaum@hytrol.com
+
+
+INSERT INTO User 
+(FirstName, LastName, Birthplace, CreatedAt
+)
+VALUES 
+('Florence', 'Griffith-Joyner', 'Littlerock, California', CURRENT_TIMESTAMP),
+('Tom', 'Brady', 'San Mateo, California', CURRENT_DATE),
+('John', 'Chase', 'Ashville, North Carolina', CURRENT_DATE),
+('Mary', 'Johnson', 'Boston, Maryland', CURRENT_DATE),
+('Philip', 'Holland', 'Atlanta, Georgia', CURRENT_DATE),
+('Harold', 'Anderson', 'Houston, Texas', CURRENT_DATE),
+('Kofi', 'Antwi', 'Kumasi, Ghana', CURRENT_DATE),
+('Jospeh', 'Baiden', 'Danville, Virginia', CURRENT_DATE),
+('Miriam', 'Forson', 'Cape Coast, Ghana', CURRENT_DATE),
+('Eric', 'Mensah', 'Accra, Ghana', CURRENT_DATE);
+
+SELECT * FROM User
+
+
+

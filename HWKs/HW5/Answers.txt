@@ -1,0 +1,17 @@
+## Assignments Solutions
+1. Null hypthesis: The results produced by the machine will NOT be significantly higher
+
+2. Alternative hypothesis: The results produced by the machine will be significantly higher
+
+3. The machines will produce results better or worse than the current situation
+
+4. * The machines are effective and produced better results
+   * The machines are not effective and produced worse results
+
+5. No, bad decision. Type II error
+
+6. No, bad decision. Type I error
+
+7. The choice will either to reject the null hypothesis, or, fail to reject the null hypothsis
+
+8. the significance levels are 1%, 5%, and 10%
